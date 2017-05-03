@@ -30,7 +30,7 @@ Multipanel.prototype.firstShowablePanel = function() {
 
 Multipanel.prototype.noShowablePanels = function () {
     return _.every(this.panels, function(panel) {
-        return !panel.showCondition();
+        return !panel.showCondition;
     });
 };
 
