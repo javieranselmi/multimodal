@@ -1,0 +1,65 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js">
+</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="multipanel.css">
+</head>
+<body>
+
+<div class="panel" id="panel1" style="background-color:tomato">
+  BUY MY T-SHIRT!
+</div>
+<div class="panel" id="panel2" style="background-color:plum">
+  GET THE JACKET!
+</div>
+<div class="panel" id="panel3" style="background-color:yellowGreen">
+  PURCHASE THE HEADPHONES!
+</div>
+<div class="panel" id="panel4" style="background-color:yellow">
+  THANK YOU FOR BUYING
+</div>
+<button onclick="mp.previousPanel()">Previous</button>
+<button onclick="mp.nextPanel()">Next</button>
+	<script src="multipanel.js"></script>
+</body>
+
+<script>
+//IMPLEMENTATION
+
+var p1 = new Panel( {
+  id: "panel1",
+  before: function() {console.log("before-panel1")},
+  after: function() {console.log("after-panel1")},
+  showCondition: false
+});
+
+var p2 = new Panel( {
+  id: "panel2",
+  before: function() {console.log("before-panel2")},
+  after: function() {console.log("after-panel2")},
+  showCondition: true
+});
+
+var p3 = new Panel( {
+  id: "panel3",
+  before: function() {console.log("before-panel3")},
+  after: function() {console.log("after-panel3")},
+  showCondition: false
+});
+
+var p4 = new Panel( {
+  id: "panel4",
+  before: function() {console.log("before-panel4")},
+  after: function() {console.log("after-panel4")},
+  showCondition: true
+});
+
+var mp = new Multipanel([p1, p2, p3, p4], {
+  beforeAll: function() {console.log("before-all")},
+  afterAll: function() {console.log("after-all")}
+});
+
+mp.start();
+
+</script>
