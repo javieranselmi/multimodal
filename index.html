@@ -31,7 +31,7 @@ var p1 = new Panel( {
   id: "panel1",
   before: function() {console.log("before-panel1")},
   after: function() {console.log("after-panel1")},
-  showCondition: false
+  showCondition: true
 });
 
 var p2 = new Panel( {
@@ -45,14 +45,14 @@ var p3 = new Panel( {
   id: "panel3",
   before: function() {console.log("before-panel3")},
   after: function() {console.log("after-panel3")},
-  showCondition: false
+  showCondition: true
 });
 
 var p4 = new Panel( {
   id: "panel4",
   before: function() {console.log("before-panel4")},
   after: function() {console.log("after-panel4")},
-  showCondition: true
+  showCondition: false
 });
 
 var mp = new Multipanel([p1, p2, p3, p4], {
